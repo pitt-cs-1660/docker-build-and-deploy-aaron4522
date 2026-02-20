@@ -30,6 +30,6 @@ jobs:
 
       - name: build, tag, and push to ecr
         run: |
-          docker build -t {{ env.REPO_NAME }}:latest .
+          docker build -t ${{ env.REPO_NAME }}:latest .
           docker tag ${{ env.REPO_NAME }}:latest ${{ env.ACCOUNT_ID }}.dkr.ecr.${{ env.REGION }}.amazonaws.com/${{ env.REPO_NAME }}:latest
-          docker push ${{ env.ACCOUNT_ID}}.dkr.ecr.${{ env.REGION }}.amazonaws.com/${{ env.REPO_NAME }}:latest
+          docker push ${{ env.ACCOUNT_ID }}.dkr.ecr.${{ env.REGION }}.amazonaws.com/${{ env.REPO_NAME }}:latest
